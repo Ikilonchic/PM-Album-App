@@ -1,0 +1,27 @@
+.container {
+    &__title {
+        font-size: 2em;
+        font-weight: 700;
+    }
+
+    &__details {
+        font-size: 1.5em;
+        margin-top: .5rem;
+    }
+
+    &__img {
+        width: fit-content;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    & > * {
+        margin-top: 1rem;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
