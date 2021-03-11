@@ -1,0 +1,28 @@
+.container {
+    &__table {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(150px, min-content));
+        grid-gap: 1rem;
+        justify-content: center;
+
+        margin: 0 auto;
+    }
+
+    &__controller {
+        display: flex;
+        flex-direction: row;
+
+        justify-content: center;
+        align-items: baseline;
+
+        margin-top: 1rem; 
+    }
+
+    &__btn {
+        padding: .5rem;
+
+        border-radius: .5rem;
+        border: none;
+    }
+}
