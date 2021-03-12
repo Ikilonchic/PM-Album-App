@@ -7,14 +7,17 @@ const DELETE_CURRENT = 'albums/delete/current';
 
 export const loadCurrentAlbum = (id) => async (dispatch) => {
     const data = await AlbumsApiService.getById(id);
-    delete data.userId;
 
-    const { user } = await AlbumsApiService.getUser(data.id);
-
-    data.owner = {
-        name: user.name,
-        email: user.email,
-    };
+    if (data) {
+        delete data.userId;
+    
+        const { user } = await AlbumsApiService.getUser(data.id);
+    
+        data.owner = {
+            name: user.name,
+            email: user.email,
+        };
+    }
 
     dispatch(setCurrent(data));
 };
