@@ -1,23 +1,26 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import styles from './PhotosTable.module.scss';
+import styles from './PhotoTable.module.scss';
 
 
 import {
     loadAllPhotos,
     clearAllPhotos,
 } from '../../ducks/photos';
-import selector from './PhotosTable.selector';
+import selector from './PhotoTable.selector';
 import Card from './Card/Card';
 
 const propTypes = {
     start: PropTypes.number.isRequired,
     limit: PropTypes.number.isRequired,
-    albumId: PropTypes.number,
+    albumId: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.string,
+    ]),
 };
 
-const PhotosTable = ({start, limit, albumId}) => {
+const PhotoTable = ({start, limit, albumId}) => {
     const dispatch = useDispatch();
 
     const photos = useSelector(selector);
@@ -54,6 +57,6 @@ const PhotosTable = ({start, limit, albumId}) => {
     </div> : null;
 };
 
-PhotosTable.propTypes = propTypes;
+PhotoTable.propTypes = propTypes;
 
-export default PhotosTable;
+export default PhotoTable;

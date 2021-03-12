@@ -1,10 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './Header.module.scss';
-
-const propTypes = {
-    className: PropTypes.string,
-};
 
 const Header = (props) => {
     const children = React.Children.toArray(props.children);
@@ -17,7 +12,5 @@ const Header = (props) => {
         </nav>
     </header>;
 };
-
-Header.propTypes = propTypes;
 
 export default Header;

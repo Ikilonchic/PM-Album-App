@@ -10,7 +10,7 @@ import {
 import selector from './AlbumPage.selector';
 
 import BackButton from '../BackButton/BackButton';
-import PhotosTable from '../PhotosTable/PhotosTable';
+import PhotoTable from '../PhotoTable/PhotoTable';
 
 const AlbumPage = (props) => {
     const dispatch = useDispatch();
@@ -34,7 +34,7 @@ const AlbumPage = (props) => {
                 <p className={styles['container__details']}>{currentAlbum.owner.name} - <a href={`mailto:${currentAlbum.owner.email}`}>Email</a></p>}
         </div>
         <div className={styles['container__photos']}>
-            <PhotosTable start={0} limit={6} albumId={Number(id)} />
+            <PhotoTable start={0} limit={6} albumId={id} />
         </div>
     </div> : null;
 };
